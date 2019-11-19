@@ -86,10 +86,10 @@ public class ListaNotasDialog extends JDialog {
     public void mouseClicked(MouseEvent evt) {
       JList<String> list = (JList<String>) evt.getSource();
       if (evt.getClickCount() == 2) {
+        ListaNotasDialog.this.dispose();
         NotaDialog nd = new NotaDialog(null, ListaNotasDialog.this, NotasOp.conteudoNota(Login.getLogado(), list.getSelectedValue()),
             list.getSelectedValue());
         nd.setVisible(true);
-        ListaNotasDialog.this.dispose();
       }
     }
   }
